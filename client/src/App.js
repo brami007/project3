@@ -23,17 +23,23 @@ class App extends Component{
     constructor(props){
         super(props);
           this.moneyHandler = this.moneyHandler.bind(this);
-          //this.toggleHover = this.toggleHover.bind(this);
+          this.plotHandler = this.plotHandler.bind(this);
             this.state = {
                 currentMoney : 0 ,
+                
                 playerName: "",
                 playerLevel: "",
+
                 propertyTotal: 0,
                 propertyPuchased: 0,
                 propertySold: 0,
+
                 clickAmount: 1,
                 moneyPerSecond: 0,
+
                 plotAmount: 20,
+                plotQuantity: 0,
+
                 house1Amount: 30,
                 house2Amount: 45,
                 condoAmount: 67.5,
@@ -41,6 +47,29 @@ class App extends Component{
                 mansionAmount: 151.875,                                
             }
          }
+    /*      moneyPerSecond
+            timer each 1000 cambia coin
+            plotQuantity= moneyPerSecond * 1.5
+            Per Second x coins 
+            */
+
+
+
+         plotHandler() {
+            this.setState((preState) => {
+
+                if (preState.currentMoney >= preState.plotAmount){
+                    return {
+                        currentMoney: preState.currentMoney - preState.plotAmount,
+                        plotAmount : preState.plotAmount * 1.5,
+                        plotQuantity: preState.plotQuantity + 1,
+                        propertyTotal: preState.propertyTotal +1
+                        };
+                }
+                
+                
+               });
+          }
 
          moneyHandler() {
             this.setState((preState) => {
@@ -74,7 +103,7 @@ class App extends Component{
         </div>
         <BuyAndSell></BuyAndSell>
         <div class="items_count">
-           <Plot></Plot>
+           <Plot action={this.plotHandler} moneyDisplay={this.state.plotAmount} quantity={this.state.plotQuantity}></Plot>
            <House1></House1>
            <House2></House2>
            <Condo></Condo>

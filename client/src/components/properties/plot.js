@@ -24,22 +24,22 @@ class Plot extends Component {
       this.setState((preState) => {
         return {
           count : preState.count + 1,
-          money : preState.money * 1.05
+          money : preState.money * 1.5
           };
        });
      }
 
     render() {
-      return  <a onClick={this.addOne}>
+      return  <a onClick={this.props.action}>
       <div class="item_house_cont">
       
       <img src="./images/plot.png" alt=""/>
       
       <div class="date_cont">
           <h3>Plot</h3>
-          <img src="./images/dollar.png" alt=""/><p>{this.state.money}</p>
+          <img src="./images/dollar.png" alt=""/><p>{this.props.moneyDisplay}</p>
       </div>
-      <h2>{this.state.count}</h2>
+      <h2>{this.props.quantity}</h2>
       
   </div>
   </a>

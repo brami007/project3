@@ -1,1 +1,0 @@
-emoji that are used in messages, and texts areas around whatsapp (status and such).
