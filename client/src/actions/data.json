@@ -1,0 +1,29 @@
+
+
+{"Properties": [
+    {
+      "Name": "Plot",
+      "Amount": 20
+    },
+    {
+      "Name": "House1",
+      "Amount": 30
+    },
+    {
+      "Name": "House2",
+      "Amount": 45
+    },
+    {
+      "Name": "Condo",
+      "Amount": 67.5
+    },
+    {
+      "Name": "Building",
+      "Amount": 101.25
+    },
+    {
+      "Name": "Mansion",
+      "Amount": 151.875
+    }
+  ]
+}
