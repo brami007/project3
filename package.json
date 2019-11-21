@@ -1,0 +1,32 @@
+{
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.12",
+    "react-router-dom": "^5.1.2"
+  },
+  "scripts": {
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "seed": "node scripts/seed.js",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build"
+  },
+  "name": "project3",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CamilaChica/project3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CamilaChica/project3/issues"
+  },
+  "homepage": "https://github.com/CamilaChica/project3#readme",
+  "description": ""
+}

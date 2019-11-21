@@ -1,3 +1,25 @@
+@media (max-width: 600px) {
+  body{
+      overflow: scroll;
+  }
+  .description {
+      display: none;
+  }
+  .items {
+      margin-top: -80px;
+      z-index: 9;
+      position: relative;
+  }
+  .item_plot, .item_house, .item_house2, .item_boogaloo, .item_condo, .item_building, .item_mansion {
+      width: 50%;
+      height: 100px;
+      margin-bottom: -12px;
+  }
+  .items_plus {
+      margin-top: 35px;
+  }
+}
+
 .App {
   text-align: center;
 }
@@ -20,3 +42,24 @@
 .App-link {
   color: #09d3ac;
 }
+
+/* Home Page */
+
+.bg {
+
+  text-align: center;
+}
+
+.HP1 {
+  padding: 80px;
+  font-family: 'Indie Flower', cursive;
+  color: #6b5b95;
+  font-size: 80px;
+} 
+
+.inputs {
+  margin-top: 20px;
+
+}
+
+

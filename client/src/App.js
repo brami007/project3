@@ -1,25 +1,35 @@
 import React,{Component} from 'react';
 import './App.css';
 
-import Statistics from "./actions/controllers/controllerStatistics"
+import MainCtrl from "./actions/controllers/mainController"
+import HomePage from './components/HomePage/index';
+
+import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
+
 
 
 class App extends Component{
-   
-          buyProperty() {
-            this.setState((preState) => {
-                return {
-                  currentMoney : preState.currentMoney + 1
-                  };
-               });
-          }
-    
-    
+     constructor(props)
+     {
+        super(props);
+        this.state={
+            authenticated:false,
+            email:""
+        }
+     }
+login=(user)=>{
+this.setState({authenticated:true, email:user.email})
+}
     render()
 {
-    return <div class="row general">
-    <Statistics></Statistics>
-</div>
+    return <Router>
+    <Switch>
+    {this.state.authenticated&&<Route path="/MainCtrl" component={()=><MainCtrl email={this.state.email} />} />}
+    <Route component ={()=><HomePage onLogIn={this.login} authenticated={this.state.authenticated} />} />
+    </Switch>
+    </Router>;
+
+    
 }
 }
 
